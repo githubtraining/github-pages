@@ -1,4 +1,4 @@
-Oops, it looks like you changed your theme to `{{ theme }}`. You will really want to use `minima` for this activity!
+It looks like you changes your theme to `{{ theme }}` but for this activity we want to use `minima`.
 
 ### :keyboard: Activity: Change the theme to minima
 

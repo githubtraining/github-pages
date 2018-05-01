@@ -1,6 +1,6 @@
 ## Step 8: Merge your first post
 
-Nice work @{{ user.username }} :tada: Users will be reading your blog in no time!
+Nice work @{{ user.username }} :tada:! Users will be reading your blog in no time!
 
 ### :keyboard: Activity: Merge your pull request
 
