@@ -1,0 +1,166 @@
+version: 1
+title: "GitHub Pages"
+tagline: "Your sidekick in using GitHub Pages and blogs"
+description: "Learn how to create a site or blog from your GitHub repositories with GitHub Pages."
+template:
+  name: "github-pages-with-jekyll"
+  url: "https://github.com/githubtraining/github-pages-with-jekyll-template.git"
+before:
+  - type: updateBranchProtection
+  - type: createIssue
+    title: Welcome
+    body: 01_class-introduction-issue.md
+steps:
+  - title: "Enable GitHub Pages"
+    description: "Turn on GitHub Pages in your repository."
+    event: "deployment_status"
+    link: "https://github.com/{{ user.username }}/{{ course.template.name }}/issues/1"
+    actions:
+      - type: gate
+        left: '%payload.deployment_status.state%'
+        operator: ===
+        right: success
+      - type: gate
+        left: '%payload.deployment.environment%'
+        operator: ===
+        right: github-pages
+      - type: respond
+        issue: 1
+        with: 02_update-index.md
+        data:
+          url: 'https://%user.username%.github.io/%payload.repository.name%'
+
+  - title: "Customize your homepage"
+    description: "Open a pull request with changes to the hompage."
+    event: "pull_request.opened"
+    link: "https://github.com/{{ user.username }}/{{ course.template.name }}/issues"
+    actions:
+      - type: gate
+        left: '%payload.pull_request.body%'
+        required: false
+        else:
+          type: respond
+          with: 06a_pull-request-blank.md
+      - type: getTree
+      - type: gate
+        gates:
+          - left: '%actions[1].data.tree%'
+            operator: includes
+            right: 'path:index.html'
+          - left: '%actions[1].data.tree%'
+            operator: includes
+            right: 'path:index.md'
+      - type: createReview
+        body: 02r_merge-pr.md
+        event: APPROVE
+        data:
+          branch: '%payload.pull_request.head.ref%'
+
+  - title: "Merge your pull request"
+    description: "Merge the pull request that customizes your homepage."
+    event: "pull_request.closed"
+    link: "https://github.com/{{ user.username }}/{{ course.template.name }}/pulls"
+    actions:
+      - type: gate
+        left: '%payload.pull_request.merged%'
+      - type: gate
+        left: '%payload.pull_request.base.ref%'
+        operator: ===
+        right: 'master'
+      - type: getTree
+      - type: gate
+        gates:
+          - left: '%actions[2].data.tree%'
+            operator: includes
+            right: 'path:index.html'
+          - left: '%actions[2].data.tree%'
+            operator: includes
+            right: 'path:index.md'
+        else:
+          type: respond
+          with: 02_wrong-file-updated.md
+      - type: createIssue
+        title: Adding a Theme
+        body: 03_add-a-theme.md
+      - type: closeIssue
+        issue: 1
+      - type: removeBranchProtection
+      - type: respond
+        with: 04_moving-on-pr.md
+        data:
+          url: '%actions[3].data.html_url%'
+
+  - title: "Add a theme"
+    description: "Using the theme chooser, select a theme for your site."
+    event: "push"
+    link: "https://github.com/{{ user.username }}/{{ course.template.name }}/issues"
+    actions:
+      - type: getFileContents
+        filename: _config.yml
+      - type: gate
+        left: '/^theme:\s?.+/m'
+        operator: test
+        right: '%actions[0]%'
+      - type: createIssue
+        title: Getting ready to blog
+        body: 05_change-theme.md
+      - type: respond
+        with: 04_moving-on.md
+        issue: Adding a Theme
+        data:
+          url: '%actions[2].data.html_url%'
+      - type: updateBranchProtection
+      - type: closeIssue
+
+  - title: "Customize site details"
+    description: "Edit the configuration file to display your information."
+    event: "pull_request"
+    link: "https://github.com/{{ user.username }}/{{ course.template.name }}/issues"
+    actions:
+      - type: gate
+        gates:
+          - left: '%payload.action%'
+            operator: ===
+            right: 'opened'
+          - left: '%payload.action%'
+            operator: ===
+            right: 'synchronize'
+      - type: gate
+        required: false
+        left: '%payload.action%'
+        operator: '!=='
+        right: 'opened'
+        else:
+          type: closeIssue
+          issue: Getting ready to blog
+      - type: gate
+        required: false
+        left: '%payload.pull_request.body%'
+        else:
+          type: respond
+          with: 06a_pull-request-blank.md
+
+  - title: "Create a blog post"
+    description: "Create a new file that will become your first blog post."
+    event: "pull_request.synchronize"
+    link: "https://github.com/{{ user.username }}/{{ course.template.name }}/pulls"
+  - title: "Add blog post metadata"
+    description: "Add YAML front matter to the blog post to display the title and date."
+    event: "pull_request.synchronize"
+    link: "https://github.com/{{ user.username }}/{{ course.template.name }}/pulls"
+  - title: "Merge your first post"
+    description: "Merge the pull request so your blog post will appear on your GitHub Pages site."
+    event: "pull_request.closed"
+    link: "https://github.com/{{ user.username }}/{{ course.template.name }}/pulls"
+    actions:
+      - type: gate
+        left: '%payload.pull_request.merged%'
+      - type: respond
+        with: 10_next-steps.md
+        data:
+          url: 'https://%user.username%.github.io/%payload.repository.name%'
+tags: [
+  "GitHub",
+  "GitHub Pages"
+]
+order: 3
