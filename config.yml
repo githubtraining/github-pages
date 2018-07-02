@@ -42,12 +42,14 @@ steps:
           type: respond
           with: 06a_pull-request-blank.md
       - type: getTree
+        action_id: tree
+        sha: '%payload.pull_request.head.sha%'
       - type: gate
         gates:
-          - left: '%actions[1].data.tree%'
+          - left: '%actions.tree.data.tree%'
             operator: includes
             right: 'path:index.html'
-          - left: '%actions[1].data.tree%'
+          - left: '%actions.tree.data.tree%'
             operator: includes
             right: 'path:index.md'
       - type: createReview
@@ -68,18 +70,21 @@ steps:
         operator: ===
         right: 'master'
       - type: getTree
+        action_id: tree
+        sha: '%payload.pull_request.head.sha%'
       - type: gate
         gates:
-          - left: '%actions[2].data.tree%'
+          - left: '%actions.tree.data.tree%'
             operator: includes
             right: 'path:index.html'
-          - left: '%actions[2].data.tree%'
+          - left: '%actions.tree.data.tree%'
             operator: includes
             right: 'path:index.md'
         else:
           type: respond
           with: 02_wrong-file-updated.md
       - type: createIssue
+        action_id: issue
         title: Adding a Theme
         body: 03_add-a-theme.md
       - type: closeIssue
@@ -88,7 +93,7 @@ steps:
       - type: respond
         with: 04_moving-on-pr.md
         data:
-          url: '%actions[3].data.html_url%'
+          url: '%actions.issue.data.html_url%'
 
   - title: "Add a theme"
     description: "Using the theme chooser, select a theme for your site."
@@ -96,19 +101,21 @@ steps:
     link: "https://github.com/{{ user.username }}/{{ course.template.name }}/issues"
     actions:
       - type: getFileContents
+        action_id: fileContents
         filename: _config.yml
       - type: gate
         left: '/^theme:\s?.+/m'
         operator: test
-        right: '%actions[0]%'
+        right: '%actions.fileContents%'
       - type: createIssue
+        action_id: issue
         title: Getting ready to blog
         body: 05_change-theme.md
       - type: respond
         with: 04_moving-on.md
         issue: Adding a Theme
         data:
-          url: '%actions[2].data.html_url%'
+          url: '%actions.issue.data.html_url%'
       - type: updateBranchProtection
       - type: closeIssue
 
