@@ -42,6 +42,7 @@ steps:
           type: respond
           with: 06a_pull-request-blank.md
       - type: getTree
+        sha: '%payload.pull_request.head.sha%'
       - type: gate
         gates:
           - left: '%actions[1].data.tree%'
@@ -68,6 +69,7 @@ steps:
         operator: ===
         right: 'master'
       - type: getTree
+        sha: '%payload.pull_request.head.sha%'
       - type: gate
         gates:
           - left: '%actions[2].data.tree%'
