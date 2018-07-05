@@ -107,18 +107,18 @@ steps:
         left: '/^theme:\s?.+/m'
         operator: test
         right: '%actions.fileContents%'
+      - type: updateBranchProtection
       - type: createIssue
         action_id: issue
         title: Getting ready to blog
         body: 05_change-theme.md
+      - type: respond
+        with: 04_moving-on.md
         issue: Adding a Theme
         data:
           url: '%actions.issue.data.html_url%'
-      - type: updateBranchProtection
       - type: closeIssue
-        issue: Add a theme
-      - type: respond
-        with: 04_moving-on.md
+        issue: Adding a Theme
 
   - title: "Customize site details"
     description: "Edit the configuration file to display your information."
