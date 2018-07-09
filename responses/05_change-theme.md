@@ -1,6 +1,6 @@
 ## Step 5: Customize Site Details
 
-Great work! You can see your selected theme in action [here]({{ url }}). If you don't see your changes right away, refresh the page.
+Great work! You can see your selected theme in action [here](https://{{ user.username }}.github.io/{{ repo }}). If you don't see your changes right away, refresh the page.
 
 ### Getting your page blog ready
 
