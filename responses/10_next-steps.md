@@ -4,7 +4,7 @@
 
 Congratulations @{{ user.username }}, you've completed this course!
 
-Your blog is now live and has been deployed [here]({{ url }})!
+Your blog is now live and has been deployed [here](https://{{ user.username }}.github.io/{{ repo }})!
 
 Before we finish, let's recap everything you completed in this repository
 
