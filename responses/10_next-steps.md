@@ -4,13 +4,9 @@
 
 Congratulations @{{ user.username }}, you've completed this course!
 
-## What went well
+Your blog is now live and has been deployed [here](https://{{ user.username }}.github.io/{{ repo }})!
 
-Now, you have a live blog deployed [here]({{ url }}) and you've gone through the GitHub Flow. 
-
-> Note: We haven't added any navigation buttons, so to view your specific blog post, try this: `{{ url }}{{ path }}`
-
-Before I say good-bye, here's a recap of all the tasks you've accomplished in your repository:
+Before we finish, let's recap everything you completed in this repository
 
 - You used the GitHub Flow like a natural
 - You enabled GitHub Pages

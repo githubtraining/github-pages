@@ -1,13 +1,15 @@
 ## Checking your post
 
-@{{ user.username }} I see you created a file, but there are a few things we need to address!
+I see you created a file @{{ user.username }} , but there are a few things we need to address so that your site builds.
 
-Take a look at your file and make sure it meets the following requirements:
+Take a look at your blog post and make sure it meets the following requirements:
 
-- [{{ directory }}] It is in the `_posts` directory
+- [{{ directory }}] It's in the `_posts` directory
 - [{{ filenumber }}] The filename starts with the correct date formatting: YYYY-MM-DD
 - [{{ post }}] The filename includes a post title
 - [{{ extension }}] The filename uses the `.md` extension
+
+If any of the requirements weren't met, edit your file now.
 
 ### :keyboard: Activity: Edit your file
 

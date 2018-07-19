@@ -1,12 +1,12 @@
 ## Checking your front matter
 
-Front matter is tricky at first! Let's take a look at how you did:
+It looks like there may be some errors in your front matter. Take a look at your front matter and make sure the following is true:
 
 - [{{ dashes }}] You used dashes on the first and final line
 - [{{ title }}] You added a page title surrounded in quotes
 - [{{ date }}] You added a date using the correct format
 
-Remember, your yaml front matter should be at the top of your blog post and it should look something like this:
+The YAML front matter should be at the top of your blog post file and should look something like this:
 
 ```yaml
 ---

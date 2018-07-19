@@ -1,4 +1,4 @@
-Uh oh  {{ user.username }}! It looks like you may have updated `{{ files }}` instead.  Please update the `index.md` file. You will want to have it looking :sparkles: its big debut :movie_camera:.
+It looks like you may have updated `{{ files }}` instead of `index.md`. Please update the `index.md` file so it's ready for its big debut. :movie_camera:
 
 ### :keyboard: Activity: Create your home page
 

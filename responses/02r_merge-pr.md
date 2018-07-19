@@ -1,6 +1,6 @@
 ## Step 3: Merge your pull request
 
-Your pull request looks awesome! Go ahead and merge <sup>[:book:](https://help.github.com/articles/github-glossary/#merge)</sup> it now @{{ user.username }}.
+You can merge<sup>[:book:](https://help.github.com/articles/github-glossary/#merge)</sup> your pull request now @{{ user.username }}! :ship: 
 
 ### :keyboard: Activity: Merge your pull request
 
