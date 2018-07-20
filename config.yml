@@ -247,7 +247,7 @@ steps:
         action_id: title
         left: '%actions.contents%'
         operator: test
-        right: 'path:/^title:\s?["'].+["']$/m,'
+        right: path:/^title:\s?["'].+["']$/m
       - type: gate
         required: false
         action_id: date
