@@ -2,9 +2,9 @@
 
 It looks like there may be some errors in your front matter. Take a look at your front matter and make sure the following is true:
 
-- [{{ dashes }}] You used dashes on the first and final line
-- [{{ title }}] You added a page title surrounded in quotes
-- [{{ date }}] You added a date using the correct format
+- [{% if dashes %}x{% else %} {% endif %}] You used dashes on the first and final line
+- [{% if title %}x{% else %} {% endif %}] You added a page title surrounded in quotes
+- [{% if date %}x{% else %} {% endif %}] You added a date using the correct format
 
 The YAML front matter should be at the top of your blog post file and should look something like this:
 

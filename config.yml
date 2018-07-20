@@ -1,7 +1,10 @@
 version: 1
-title: "GitHub Pages"
-tagline: "Your sidekick in using GitHub Pages and blogs"
-description: "Learn how to create a site or blog from your GitHub repositories with GitHub Pages."
+title: GitHub Pages
+tagline: Your sidekick in using GitHub Pages and blogs
+description: Learn how to create a site or blog from your GitHub repositories with GitHub Pages.
+tags:
+  - GitHub
+  - GitHub Pages
 template:
   name: "github-pages-with-jekyll"
   url: "https://github.com/githubtraining/github-pages-with-jekyll-template.git"
@@ -25,7 +28,7 @@ steps:
         operator: ===
         right: github-pages
       - type: respond
-        issue: 1
+        issue: Welcome
         with: 02_update-index.md
         data:
           url: 'https://%user.username%.github.io/%payload.repository.name%'
@@ -88,7 +91,7 @@ steps:
         title: Adding a Theme
         body: 03_add-a-theme.md
       - type: closeIssue
-        issue: 1
+        issue: Welcome
       - type: removeBranchProtection
       - type: respond
         with: 04_moving-on-pr.md
@@ -152,10 +155,127 @@ steps:
     description: "Create a new file that will become your first blog post."
     event: "pull_request.synchronize"
     link: "https://github.com/{{ user.username }}/{{ course.template.name }}/pulls"
+    actions:
+      - type: getTree
+        action_id: tree
+      - type: gate
+        action_id: directory
+        required: false
+        left: '%actions.tree.data.tree%'
+        operator: includes
+        right: 'path:/^_posts/'
+      - type: gate
+        action_id: filenumber
+        required: false
+        left: '%actions.tree.data.tree%'
+        operator: includes
+        right: '/\d{4}-\d{2}-\d{2}/'
+      - type: gate
+        action_id: post
+        required: false
+        left: '%actions.tree.data.tree%'
+        operator: includes
+        right: '/[a-zA-Z]\/'
+      - type: gate
+        action_id: extension
+        required: false
+        left: '%actions.tree.data.tree%'
+        operator: includes
+        right: '/\.md$/'
+      - type: gate
+        action_id: filename
+        required: false
+        left: '%actions.tree.data.tree%'
+        operator: includes
+        right: '/^_posts\/(\d{4})-(\d{2})-(\d{2})-(.*)\.md$/'
+      - type: gate
+        gates:
+          - left: '%actions.directory'
+            operator: ===
+            right: true
+          - left: '%actions.filenumber'
+            operator: ===
+            right: true
+          - left: '%actions.post'
+            operator: ===
+            right: true
+          - left: '%actions.extension'
+            operator: ===
+            right: true
+          - left: '%actions.filename'
+            operator: ===
+            right: true
+        else:
+          - type: createReview
+            body: 07b_incorrect-post.md
+            event: REQUEST_CHANGES
+            data:
+              directory: '%actions.directory%'
+              filenumber: '%actions.filenumber%'
+              post: '%actions.post%'
+              extension: '%actions.extension%'
+              filename: '%actions.filename%'
+      - type: createReview
+        body: 08_add-front-matter.md
+        event: COMMENT
+
+
   - title: "Add blog post metadata"
     description: "Add YAML front matter to the blog post to display the title and date."
     event: "pull_request.synchronize"
     link: "https://github.com/{{ user.username }}/{{ course.template.name }}/pulls"
+    actions:
+      - type: getTree
+        action_id: tree
+        recursive: true
+      - type: findInTree
+        action_id: file
+        tree: '%actions.tree.data.tree%'
+        path: '/^_posts/'
+      - type: getFileContents
+        filename: '%actions.file.path%'
+      - type: gate
+        required: false
+        action_id: dashes
+        left: '%actions.contents%'
+        operator: test
+        right: /^-{3}[\s\S]+-{3}/
+      - type: gate
+        required: false
+        action_id: title
+        left: '%actions.contents%'
+        operator: test
+        right: /^title:\s?["'].+["']$/m,
+      - type: gate
+        required: false
+        action_id: date
+        left: '%actions.contents%'
+        operator: test
+        right: /^date:\s?\d{4}-\d{2}-\d{2}/m
+      - type: gate
+        gates:
+          - left: '%actions.dashes'
+            operator: ===
+            right: true
+          - left: '%actions.title'
+            operator: ===
+            right: true
+          - left: '%actions.date'
+            operator: ===
+            right: true
+        else:
+          - type: createReview
+            body: 08r_incorrect-front-matter.md
+            event: REQUEST_CHANGES
+            data:
+              date: '%actions.date%'
+              title: '%actions.title%'
+              dashes: '%actions.dashes%'
+      - type: createReview
+        body: 08_merge-and-celebrate.md
+        event: APPROVE
+        
+
   - title: "Merge your first post"
     description: "Merge the pull request so your blog post will appear on your GitHub Pages site."
     event: "pull_request.closed"
@@ -167,8 +287,4 @@ steps:
         with: 10_next-steps.md
         data:
           url: 'https://%user.username%.github.io/%payload.repository.name%'
-tags: [
-  "GitHub",
-  "GitHub Pages"
-]
 order: 3
