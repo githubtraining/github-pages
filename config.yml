@@ -171,25 +171,25 @@ steps:
         required: false
         left: '%actions.tree.data.tree%'
         operator: includes
-        right: '/\d{4}-\d{2}-\d{2}/'
+        right: 'path:/\d{4}-\d{2}-\d{2}/'
       - type: gate
         action_id: post
         required: false
         left: '%actions.tree.data.tree%'
         operator: includes
-        right: '/[a-zA-Z]\/'
+        right: 'path:/[a-zA-Z]\/'
       - type: gate
         action_id: extension
         required: false
         left: '%actions.tree.data.tree%'
         operator: includes
-        right: '/\.md$/'
+        right: 'path:/\.md$/'
       - type: gate
         action_id: filename
         required: false
         left: '%actions.tree.data.tree%'
         operator: includes
-        right: '/^_posts\/(\d{4})-(\d{2})-(\d{2})-(.*)\.md$/'
+        right: 'path:/^_posts\/(\d{4})-(\d{2})-(\d{2})-(.*)\.md$/'
       - type: gate
         gates:
           - left: '%actions.directory'
@@ -241,19 +241,19 @@ steps:
         action_id: dashes
         left: '%actions.contents%'
         operator: test
-        right: /^-{3}[\s\S]+-{3}/
+        right: 'path:/^-{3}[\s\S]+-{3}/'
       - type: gate
         required: false
         action_id: title
         left: '%actions.contents%'
         operator: test
-        right: /^title:\s?["'].+["']$/m,
+        right: 'path:/^title:\s?["'].+["']$/m,'
       - type: gate
         required: false
         action_id: date
         left: '%actions.contents%'
         operator: test
-        right: /^date:\s?\d{4}-\d{2}-\d{2}/m
+        right: 'path:/^date:\s?\d{4}-\d{2}-\d{2}/m'
       - type: gate
         gates:
           - left: '%actions.dashes'
@@ -276,7 +276,6 @@ steps:
       - type: createReview
         body: 08_merge-and-celebrate.md
         event: APPROVE
-        
 
   - title: "Merge your first post"
     description: "Merge the pull request so your blog post will appear on your GitHub Pages site."
