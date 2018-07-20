@@ -177,7 +177,7 @@ steps:
         required: false
         left: '%actions.tree.data.tree%'
         operator: includes
-        right: 'path:/[a-zA-Z]\/'
+        right: 'path:/[a-zA-Z]\.md$/'
       - type: gate
         action_id: extension
         required: false
