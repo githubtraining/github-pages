@@ -1,15 +1,14 @@
 ## Checking your post
 
-I see you created a file @{{ user.username }} , but there are a few things we need to address so that your site builds.
+@{{ user.username }} I see you created a file, but there are a few things we need to address!
 
-Take a look at your blog post and make sure it meets the following requirements:
+Take a look at your file and make sure it meets the following requirements:
 
-- [{{ directory }}] It's in the `_posts` directory
-- [{{ filenumber }}] The filename starts with the correct date formatting: YYYY-MM-DD
-- [{{ post }}] The filename includes a post title
-- [{{ extension }}] The filename uses the `.md` extension
-
-If any of the requirements weren't met, edit your file now.
+- [{% if directory %}x{% else %} {%endif%}] It is in the `_posts` directory
+- [{% if filenumber %}x{% else %} {%endif%}] The filename starts with the correct date formatting: YYYY-MM-DD
+- [{% if post %}x{% else %} {%endif%}] The filename includes a post title
+- [{% if extension %}x{% else %} {%endif%}] The filename uses the `.md` extension
+- [{% if filename %}x{% else %} {%endif%}] The filename follows Jekyll's [specific filename requirements](https://jekyllrb.com/docs/posts/#creating-post-files).
 
 ### :keyboard: Activity: Edit your file
 
