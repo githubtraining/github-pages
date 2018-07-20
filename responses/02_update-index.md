@@ -7,7 +7,7 @@ Your repository has an `index.md` file so we can update it to include your perso
 
 ### :keyboard: Activity: Create your homepage
 
-1. On the main page of your repository, browse to the `index.md` file.
+1. Navigate to the “Code” tab of this repository, and browse to the `index.md` file.
 1. In the upper right corner, click :pencil2: to open the file editor.
 1. Type the content you want on your homepage and click **Create a new branch for this commit and start a pull request**. Remember, [you can use Markdown](https://help.github.com/articles/basic-writing-and-formatting-syntax/) to format your content.
 1. Open a pull request.
