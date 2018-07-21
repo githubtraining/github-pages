@@ -152,6 +152,8 @@ steps:
           with: 06a_pull-request-blank.md
       - type: respond
         with: 07_create-blog-post.md
+        data:
+          branch: '%payload.pull_request.head.ref%'
 
   - title: "Create a blog post"
     description: "Create a new file that will become your first blog post."
