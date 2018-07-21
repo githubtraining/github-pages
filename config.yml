@@ -161,6 +161,7 @@ steps:
       - type: getTree
         action_id: tree
         recursive: true
+        sha: '%payload.pull_request.head.sha%'
       - type: gate
         action_id: directory
         required: false
@@ -231,6 +232,7 @@ steps:
       - type: getTree
         action_id: tree
         recursive: true
+        sha: '%payload.pull_request.head.sha%'
       - type: findInTree
         action_id: file
         tree: '%actions.tree.data.tree%'
