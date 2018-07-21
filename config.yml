@@ -160,6 +160,7 @@ steps:
     actions:
       - type: getTree
         action_id: tree
+        recursive: true
       - type: gate
         action_id: directory
         required: false
