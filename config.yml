@@ -28,7 +28,7 @@ steps:
         operator: ===
         right: github-pages
       - type: respond
-        issue: Welcome
+        issue: 1
         with: 02_update-index.md
         data:
           url: 'https://%user.username%.github.io/%payload.repository.name%'
