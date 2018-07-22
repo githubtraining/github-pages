@@ -6,7 +6,7 @@ Great work! You can see your selected theme in action [here](https://{{ user.use
 
 GitHub added the theme you selected to your `_config.yml` file. Jekyll uses the `_config.yml` file to store  settings for your site, like your theme, as well as reusable content like your site title and GitHub handle.
 
-You can check out the `_config.yml` file on the main page of your repository.
+You can check out the `_config.yml` file on the **Code** tab of your repository.
 
 ### :keyboard: Activity: Modify the config file
 
