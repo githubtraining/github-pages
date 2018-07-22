@@ -240,7 +240,7 @@ steps:
       - type: findInTree
         action_id: file
         tree: '%actions.tree.data.tree%'
-        path: '/^_posts/'
+        path: '/^_posts\/\d{4}-\d{2}-\d{2}-.*\.md$/'
       - type: getFileContents
         filename: '%actions.file.path%'
         action_id: contents
