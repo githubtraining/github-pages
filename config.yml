@@ -158,10 +158,12 @@ steps:
         operator: test
         right: '%actions.file%'
         else:
-          type: respond
-          with: 05r_wrong-theme.md
-      - type: respond
-        with: 07_create-blog-post.md
+          type: createReview
+          event: REQUEST_CHANGES
+          body: 05r_wrong-theme.md
+      - type: createReview
+        event: COMMENT
+        body: 07_create-blog-post.md
         data:
           branch: '%payload.pull_request.head.ref%'
 
