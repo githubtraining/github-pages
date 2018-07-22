@@ -17,7 +17,7 @@ steps:
   - title: Enable GitHub Pages
     description: Turn on GitHub Pages in your repository.
     event: deployment_status
-    link: "https://github.com/{{ user.username }}/{{ course.template.name }}/issues/1"
+    link: https://github.com/{{ user.username }}/{{ course.template.name }}/issues/1
     actions:
       - type: gate
         left: '%payload.deployment_status.state%'
@@ -101,7 +101,7 @@ steps:
   - title: Add a theme
     description: Using the theme chooser, select a theme for your site.
     event: push
-    link: "https://github.com/{{ user.username }}/{{ course.template.name }}/issues"
+    link: https://github.com/{{ user.username }}/{{ course.template.name }}/issues
     actions:
       - type: getFileContents
         action_id: fileContents
