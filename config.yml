@@ -157,6 +157,9 @@ steps:
         left: '%actions.file%'
         operator: test
         right: '/^theme:\s?minima$/m'
+        else:
+          type: respond
+          with: 05r_wrong-theme.md
       - type: respond
         with: 07_create-blog-post.md
         data:
