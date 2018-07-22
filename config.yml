@@ -150,6 +150,13 @@ steps:
         else:
           type: respond
           with: 06a_pull-request-blank.md
+      - type: getFileContents
+        filename: _config.yml
+        action_id: file
+      - type: gate
+        left: '%actions.file%'
+        operator: test
+        right: '/^theme:\s?minima$/m'
       - type: respond
         with: 07_create-blog-post.md
         data:
@@ -232,6 +239,7 @@ steps:
         path: '/^_posts/'
       - type: getFileContents
         filename: '%actions.file.path%'
+        action_id: contents
       - type: gate
         required: false
         action_id: dashes
