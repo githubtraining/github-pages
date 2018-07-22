@@ -205,7 +205,7 @@ steps:
         required: false
         left: '%actions.tree.data.tree%'
         operator: includes
-        right: 'path:/(?:^|\/)\d{4}-\d{2}-\d{2}-.*\.md$/'
+        right: 'path:/(^|\/)\d{4}-\d{2}-\d{2}-.*\.md$/'
       - type: gate
         every: true
         gates:
