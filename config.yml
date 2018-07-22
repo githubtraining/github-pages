@@ -107,7 +107,7 @@ steps:
         action_id: fileContents
         filename: _config.yml
       - type: gate
-        left: '/^theme:\s?.+/m'
+        left: '/^theme:/m'
         operator: test
         right: '%actions.fileContents%'
       - type: updateBranchProtection
