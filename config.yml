@@ -6,17 +6,17 @@ tags:
   - GitHub
   - GitHub Pages
 template:
-  name: "github-pages-with-jekyll"
-  url: "https://github.com/githubtraining/github-pages-with-jekyll-template.git"
+  name: github-pages-with-jekyll
+  url: https://github.com/githubtraining/github-pages-with-jekyll-template.git
 before:
   - type: updateBranchProtection
   - type: createIssue
     title: Welcome
     body: 01_class-introduction-issue.md
 steps:
-  - title: "Enable GitHub Pages"
-    description: "Turn on GitHub Pages in your repository."
-    event: "deployment_status"
+  - title: Enable GitHub Pages
+    description: Turn on GitHub Pages in your repository.
+    event: deployment_status
     link: "https://github.com/{{ user.username }}/{{ course.template.name }}/issues/1"
     actions:
       - type: gate
@@ -33,10 +33,10 @@ steps:
         data:
           url: 'https://%user.username%.github.io/%payload.repository.name%'
 
-  - title: "Customize your homepage"
-    description: "Open a pull request with changes to the homepage."
-    event: "pull_request.opened"
-    link: "https://github.com/{{ user.username }}/{{ course.template.name }}/issues"
+  - title: Customize your homepage
+    description: Open a pull request with changes to the homepage.
+    event: pull_request.opened
+    link: https://github.com/{{ user.username }}/{{ course.template.name }}/issues
     actions:
       - type: gate
         left: '%payload.pull_request.body%'
@@ -61,10 +61,10 @@ steps:
         data:
           branch: '%payload.pull_request.head.ref%'
 
-  - title: "Merge your pull request"
-    description: "Merge the pull request that customizes your homepage."
-    event: "pull_request.closed"
-    link: "https://github.com/{{ user.username }}/{{ course.template.name }}/pulls"
+  - title: Merge your pull request
+    description: Merge the pull request that customizes your homepage.
+    event: pull_request.closed
+    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
     actions:
       - type: gate
         left: '%payload.pull_request.merged%'
@@ -98,9 +98,9 @@ steps:
         data:
           url: '%actions.issue.data.html_url%'
 
-  - title: "Add a theme"
-    description: "Using the theme chooser, select a theme for your site."
-    event: "push"
+  - title: Add a theme
+    description: Using the theme chooser, select a theme for your site.
+    event: push
     link: "https://github.com/{{ user.username }}/{{ course.template.name }}/issues"
     actions:
       - type: getFileContents
@@ -123,10 +123,10 @@ steps:
       - type: closeIssue
         issue: Adding a Theme
 
-  - title: "Customize site details"
-    description: "Edit the configuration file to display your information."
-    event: "pull_request"
-    link: "https://github.com/{{ user.username }}/{{ course.template.name }}/issues"
+  - title: Customize site details
+    description: Edit the configuration file to display your information.
+    event: pull_request
+    link: https://github.com/{{ user.username }}/{{ course.template.name }}/issues
     actions:
       - type: gate
         gates:
@@ -167,10 +167,10 @@ steps:
         data:
           branch: '%payload.pull_request.head.ref%'
 
-  - title: "Create a blog post"
-    description: "Create a new file that will become your first blog post."
-    event: "pull_request.synchronize"
-    link: "https://github.com/{{ user.username }}/{{ course.template.name }}/pulls"
+  - title: Create a blog post
+    description: Create a new file that will become your first blog post.
+    event: pull_request.synchronize
+    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
     actions:
       - type: getTree
         action_id: tree
@@ -228,10 +228,10 @@ steps:
         body: 08_add-front-matter.md
         event: COMMENT
 
-  - title: "Add blog post metadata"
-    description: "Add YAML front matter to the blog post to display the title and date."
-    event: "pull_request.synchronize"
-    link: "https://github.com/{{ user.username }}/{{ course.template.name }}/pulls"
+  - title: Add blog post metadata
+    description: Add YAML front matter to the blog post to display the title and date.
+    event: pull_request.synchronize
+    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
     actions:
       - type: getTree
         action_id: tree
@@ -280,10 +280,10 @@ steps:
         body: 08_merge-and-celebrate.md
         event: APPROVE
 
-  - title: "Merge your first post"
-    description: "Merge the pull request so your blog post will appear on your GitHub Pages site."
-    event: "pull_request.closed"
-    link: "https://github.com/{{ user.username }}/{{ course.template.name }}/pulls"
+  - title: Merge your first post
+    description: Merge the pull request so your blog post will appear on your GitHub Pages site.
+    event: pull_request.closed
+    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
     actions:
       - type: gate
         left: '%payload.pull_request.merged%'
