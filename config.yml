@@ -247,21 +247,21 @@ steps:
       - type: gate
         required: false
         action_id: dashes
-        left: '%actions.contents%'
+        left: '/^-{3}[\s\S]+-{3}/'
         operator: test
-        right: '/^-{3}[\s\S]+-{3}/'
+        right: '%actions.contents%'
       - type: gate
         required: false
         action_id: title
-        left: '%actions.contents%'
+        left: /^title:\s?["'].+["']$/m
         operator: test
-        right: /^title:\s?["'].+["']$/m
+        right: '%actions.contents%'
       - type: gate
         required: false
         action_id: date
-        left: '%actions.contents%'
+        left: '/^date:\s?\d{4}-\d{2}-\d{2}/m'
         operator: test
-        right: '/^date:\s?\d{4}-\d{2}-\d{2}/m'
+        right: '%actions.contents%'
       - type: gate
         every: true
         gates:
