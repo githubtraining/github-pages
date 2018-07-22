@@ -226,7 +226,6 @@ steps:
         body: 08_add-front-matter.md
         event: COMMENT
 
-
   - title: "Add blog post metadata"
     description: "Add YAML front matter to the blog post to display the title and date."
     event: "pull_request.synchronize"
