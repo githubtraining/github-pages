@@ -1,4 +1,6 @@
-It looks like your pull request description is empty, @{{ user.username }}. By adding keywords to your pull request, you can automatically close issues.
+It looks like your pull request description is empty, @{{ user.username }}. 
+
+**Did you know?** By adding keywords to your pull request, you can automatically close issues.
 
 For example, if you type `closes #2` in your pull request description, the open issue will close when this exercise is complete! For more keywords that you can use to close issues, see “[Closing issues with keywords](https://help.github.com/articles/closing-issues-using-keywords/)".
 
