@@ -1,4 +1,4 @@
-Did you know you can  host your personal, organization, and project sites on GitHub? With GitHub Pages, you can quickly create a site from your GitHub repositories—a great way to share static content related to your repository like resumes, portfolios, and project blogs. See a word you don't understand? We've included an emoji :book: next to some key terms. Click on it to see its definition.
+Did you know you can  host your personal, organization, and project sites on GitHub? With GitHub Pages, you can quickly create a site from your GitHub repositories—a great way to share static content related to your repository like resumes, portfolios, and project blogs. 
 
 In this course, you’ll learn how to:
 
