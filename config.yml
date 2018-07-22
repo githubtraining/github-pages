@@ -154,9 +154,9 @@ steps:
         filename: _config.yml
         action_id: file
       - type: gate
-        left: '%actions.file%'
+        left: '/^theme:\s?minima$/m'
         operator: test
-        right: '/^theme:\s?minima$/m'
+        right: '%actions.file%'
         else:
           type: respond
           with: 05r_wrong-theme.md
