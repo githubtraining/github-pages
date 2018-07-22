@@ -197,11 +197,11 @@ steps:
       - type: gate
         every: true
         gates:
-          - left: '%actions.directory'
-          - left: '%actions.filenumber'
-          - left: '%actions.post'
-          - left: '%actions.extension'
-          - left: '%actions.filename'
+          - left: '%actions.directory%'
+          - left: '%actions.filenumber%'
+          - left: '%actions.post%'
+          - left: '%actions.extension%'
+          - left: '%actions.filename%'
         else:
           - type: createReview
             body: 07b_incorrect-post.md
@@ -253,9 +253,9 @@ steps:
       - type: gate
         every: true
         gates:
-          - left: '%actions.dashes'
-          - left: '%actions.title'
-          - left: '%actions.date'
+          - left: '%actions.dashes%'
+          - left: '%actions.title%'
+          - left: '%actions.date%'
         else:
           - type: createReview
             body: 08r_incorrect-front-matter.md
