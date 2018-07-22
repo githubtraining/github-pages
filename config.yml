@@ -239,6 +239,7 @@ steps:
         path: '/^_posts/'
       - type: getFileContents
         filename: '%actions.file.path%'
+        action_id: contents
       - type: gate
         required: false
         action_id: dashes
