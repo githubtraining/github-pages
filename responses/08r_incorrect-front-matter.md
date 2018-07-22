@@ -11,7 +11,7 @@ The YAML front matter should be at the top of your blog post file and should loo
 ```yaml
 ---
 title: "Your blog post title"
-date:  YYYY-MM-DD
+date: YYYY-MM-DD
 ---
 ```
 
