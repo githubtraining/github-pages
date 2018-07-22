@@ -277,7 +277,7 @@ steps:
               title: '%actions.title%'
               dashes: '%actions.dashes%'
       - type: createReview
-        body: 08_merge-and-celebrate.md
+        body: 09_merge-and-celebrate.md
         event: APPROVE
 
   - title: Merge your first post
