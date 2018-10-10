@@ -1,4 +1,3 @@
-version: 1
 title: GitHub Pages
 tagline: Your sidekick in using GitHub Pages and blogs
 description: Learn how to create a site or blog from your GitHub repositories with GitHub Pages.
@@ -7,7 +6,7 @@ tags:
   - GitHub Pages
 template:
   name: github-pages-with-jekyll
-  url: https://github.com/githubtraining/github-pages-with-jekyll-template.git
+  repo: github-pages-with-jekyll-template
 before:
   - type: updateBranchProtection
   - type: createIssue
