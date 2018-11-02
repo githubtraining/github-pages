@@ -16,7 +16,7 @@ steps:
   - title: Enable GitHub Pages
     description: Turn on GitHub Pages in your repository.
     event: deployment_status
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/issues/1
+    link: '{{ repoUrl }}/issues/1'
     actions:
       - type: gate
         left: '%payload.deployment_status.state%'
@@ -35,7 +35,7 @@ steps:
   - title: Customize your homepage
     description: Open a pull request with changes to the homepage.
     event: pull_request.opened
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/issues
+    link: '{{ repoUrl }}/issues'
     actions:
       - type: gate
         left: '%payload.pull_request.body%'
@@ -63,7 +63,7 @@ steps:
   - title: Merge your pull request
     description: Merge the pull request that customizes your homepage.
     event: pull_request.closed
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
+    link: '{{ repoUrl }}/pulls'
     actions:
       - type: gate
         left: '%payload.pull_request.merged%'
@@ -100,7 +100,7 @@ steps:
   - title: Add a theme
     description: Using the theme chooser, select a theme for your site.
     event: push
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/issues
+    link: '{{ repoUrl }}/issues'
     actions:
       - type: getFileContents
         action_id: fileContents
@@ -125,7 +125,7 @@ steps:
   - title: Customize site details
     description: Edit the configuration file to display your information.
     event: pull_request
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/issues
+    link: '{{ repoUrl }}/issues'
     actions:
       - type: gate
         gates:
@@ -169,7 +169,7 @@ steps:
   - title: Create a blog post
     description: Create a new file that will become your first blog post.
     event: pull_request.synchronize
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
+    link: '{{ repoUrl }}/pulls'
     actions:
       - type: getTree
         action_id: tree
@@ -230,7 +230,7 @@ steps:
   - title: Add blog post metadata
     description: Add YAML front matter to the blog post to display the title and date.
     event: pull_request.synchronize
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
+    link: '{{ repoUrl }}/pulls'
     actions:
       - type: getTree
         action_id: tree
@@ -282,7 +282,7 @@ steps:
   - title: Merge your first post
     description: Merge the pull request so your blog post will appear on your GitHub Pages site.
     event: pull_request.closed
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
+    link: '{{ repoUrl }}/pulls'
     actions:
       - type: gate
         left: '%payload.pull_request.merged%'
@@ -290,4 +290,3 @@ steps:
         with: 10_next-steps.md
         data:
           url: 'https://%user.username%.github.io/%payload.repository.name%'
-order: 3
