@@ -15,7 +15,7 @@ date: YYYY-MM-DD
 ---
 ```
 
-### :keyboard: Activity: Edit your file
+### :keyboard: Activity: Edit your blog post
 
 1. Click the "Files Changed" tab in this pull request
 1. Scroll past the config file, and find the file that you created
