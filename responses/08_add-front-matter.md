@@ -11,9 +11,10 @@ date: 2019-01-20
 
 This example adds a title and date to your blog post. There are other useful things you could add here in the future like layouts, categories, or any other logic that is useful to you. For more information about configuring front matter, see the [Jekyll front matter documentation](https://jekyllrb.com/docs/frontmatter/).
 
-### :keyboard: Activity: Add Front Matter
+### :keyboard: Activity: Add Front Matter to your Blog Post
 
 1. Click the "Files Changed" tab in this pull request
+1. Scroll past the config file, and find the file that you created
 1. Click on the pencil icon on the right side of the screen
 1. Type the following content at the top of your blog post:
 
