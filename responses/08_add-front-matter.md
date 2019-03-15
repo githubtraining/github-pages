@@ -14,6 +14,7 @@ This example adds a title and date to your blog post. There are other useful thi
 ### :keyboard: Activity: Add Front Matter
 
 1. Click the "Files Changed" tab in this pull request
+1. Scroll past the config file, and find the file that you created
 1. Click on the pencil icon on the right side of the screen
 1. Type the following content at the top of your blog post:
 
