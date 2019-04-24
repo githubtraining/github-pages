@@ -14,7 +14,11 @@ Let's change the `_config.yml` so it's a perfect fit for your new blog. First, w
 
 1. Navigate to the **Code** tab of this repository, and browse to the `_config.yml` file, or click this link [here]({{ repoUrl }}/blob/master/_config.yml).
 1. In the upper right corner, click :pencil2: to open the file editor.
-1. Change `theme:` to **jekyll-theme-minimal** and modify the other configuration variables such as `title:`, `author:`, and `description:` to customize your site.
+1. Change `theme:` to **jekyll-theme-minimal** so it shows in the `_config.yml` file as below:
+    ```
+    theme: jekyll-theme-minimal
+    ```
+1. Modify the other configuration variables such as `title:`, `author:`, and `description:` to customize your site.
 1. Click **Create a new branch for this commit and start a pull request**.
 1. Open a pull request.
 
