@@ -6,7 +6,7 @@ This pull request looks great so far. :sparkles: You've just edited the `_config
 
 ### :keyboard: Activity: Add some content to your blog
 
-**Shortcut Note**: Click this link [here](https://github.com/{{ owner }}/{{ repo }}/new/{{ branch }}/?filename=_posts/{{ date | date: "%y-%m-%d" }}-my-first-blog-post.md) to automatically complete steps 1-4.
+**Shortcut Note**: Click this link [here](https://github.com/{{ owner }}/{{ repo }}/new/{{ branch }}/?filename=_posts/{{ date | date: "%Y-%m-%d" }}-my-first-blog-post.md) to automatically complete steps 1-4.
 
 1. On the "Code" tab, select your `{{ branch }}` branch
 1. Click **Create new file**
