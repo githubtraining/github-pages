@@ -2,7 +2,7 @@ It looks like you may have updated `{{ files }}` instead of `index.md`. Please u
 
 ### :keyboard: Activity: Create your home page
 
-1. On the **Code** tab, click the `index.md` file
+1. On the **Code** tab, click the `index.md` file, or use this link [here]({{ repoUrl }}/blob/master/index.html).
 1. Click the :pencil2: icon to enter edit mode and add a few lines of content. Remember, [you can use Markdown](https://help.github.com/articles/basic-writing-and-formatting-syntax/)
 1. Scroll to the bottom and select the option to "Create a new branch for this commit and start a pull request"
 1. Select **Propose file change**
