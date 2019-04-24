@@ -153,7 +153,7 @@ steps:
         filename: _config.yml
         action_id: file
       - type: gate
-        left: '/^theme:\s?minima$/m'
+        left: '/^theme:\s?jekyll-theme-minimal$/m'
         operator: test
         right: '%actions.file%'
         else:
@@ -165,6 +165,7 @@ steps:
         body: 07_create-blog-post.md
         data:
           branch: '%payload.pull_request.head.ref%'
+          date: '%payload.pull_request.created_at%'
 
   - title: Create a blog post
     description: Create a new file that will become your first blog post.
