@@ -153,7 +153,7 @@ steps:
         filename: _config.yml
         action_id: file
       - type: gate
-        left: '/^theme:\s?jekyll-theme-cayman$/m'
+        left: '/^theme:\s?jekyll-theme-minimal$/m'
         operator: test
         right: '%actions.file%'
         else:

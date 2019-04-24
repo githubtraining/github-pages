@@ -1,6 +1,6 @@
 ## Step 2: Customize your homepage
 
-Great job! Now that GitHub Pages is enabled, you can view your website here: https://{{ user.username }}.github.io/{{ repo }} 
+Great job! Now that GitHub Pages is enabled, you can view your website here: https://{{ user.username }}.github.io/{{ repo }}
 
 __NOTE:__ You'll be updating your GitHub Pages site in the upcoming steps. To make things easier to view, I recommend that you open this link in another tab or window for quick access to view your changes.
 
@@ -10,7 +10,7 @@ Your repository has an `index.md` file so we can update it to include your perso
 
 ### :keyboard: Activity: Create your homepage
 
-1. Navigate to the **Code** tab of this repository, and browse to the `index.md` file, or click this link [here]({{ repoUrl }}/blob/master/index.md).
+1. Navigate to the **Code** tab of this repository, and browse to the `index.md` file, or click this link [here](https://github.com/{{ owner }}/{{ repo }}/blob/master/index.md).
 1. In the upper right corner, click the :pencil2: pencil icon to open the file editor.
 1. Type the content you want on your homepage and remember, [you can use Markdown](https://help.github.com/articles/basic-writing-and-formatting-syntax/) to format your content.
 1. Scroll to the bottom, type a commit message, and click **Create a new branch for this commit and start a pull request**.
