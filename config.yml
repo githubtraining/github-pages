@@ -18,14 +18,6 @@ steps:
     event: page_build
     link: '{{ repoUrl }}/issues/1'
     actions:
-      - type: gate
-        left: '%payload.deployment_status.state%'
-        operator: ===
-        right: success
-      - type: gate
-        left: '%payload.deployment.environment%'
-        operator: ===
-        right: github-pages
       - type: respond
         issue: 1
         with: 02_update-index.md
