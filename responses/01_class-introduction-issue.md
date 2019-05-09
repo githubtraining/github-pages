@@ -12,13 +12,13 @@ In this course, you'll create a blog hosted on GitHub Pages and learn how to:
 
 ### New to GitHub?
 
-Before we can begin, you'll need to know how to create a branch on GitHub, commit changes using Git, and open a pull request on GitHub. If you need a refresher on the GitHub flow, check out the [Introduction to GitHub course]({{ host}}/courses/introduction-to-github).
+Before we can begin, you'll need to know how to create a branch on GitHub, commit changes using Git, and open a pull request on GitHub. If you need a refresher on the GitHub flow, check out the [Introduction to GitHub course]({{ host }}/courses/introduction-to-github).
 
 ### :keyboard: Activity: Turn on GitHub Pages
 
 The first step to publishing your blog to the web is to enable GitHub Pages on this repository <sup>[:book:](https://help.github.com/articles/github-glossary/#repository)</sup>. When you enable GitHub Pages on a repository, GitHub takes the content that's on the master branch and publishes a website based on its contents.
 
-1. Under your repository name, click [**Settings**](https://github.com/{{ owner }}/{{ repo }}/settings)
+1. Under your repository name, click [**Settings**]({{ repoUrl }}/settings)
 1. In the "GitHub Pages" section, use the Select source drop-down menu to select the `master branch` as your GitHub Pages publishing source.
 1. Click **Save**
 
