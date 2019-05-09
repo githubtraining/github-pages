@@ -13,7 +13,6 @@ before:
     title: Welcome
     body: 00_class-introduction-issue.md
 steps:
-  #1
   - title: Generate a GitHub Pages site
     description: Generate a GitHub Pages site with the automatic page generator. 
     event: page_build
@@ -24,7 +23,6 @@ steps:
         with: 01_update-index.md
         data:
           url: 'https://%user.username%.github.io/%payload.repository.name%'
-  #2
   - title: Customize your homepage
     description: Open a pull request with changes to the homepage.
     event: pull_request.opened
@@ -44,9 +42,6 @@ steps:
           - left: '%actions.tree.data.tree%'
             operator: includes
             right: 'path:index.html'
-          - left: '%actions.tree.data.tree%'
-            operator: includes
-            right: 'path:index.md'
       - type: createReview
         body: 02_merge-pr.md
         event: APPROVE
@@ -54,7 +49,6 @@ steps:
           branch: '%payload.pull_request.head.ref%'
       - type: closeIssue
         issue: Welcome
-  #3
   - title: Merge your pull request
     description: Merge the pull request that customizes your homepage.
     event: pull_request.closed
@@ -76,7 +70,6 @@ steps:
         data:
           url: '%actions.issue.data.html_url%'
       - type: removeBranchProtection
-  #4
   - title: Customize site details
     description: Edit the configuration file to display your information.
     event: pull_request
@@ -120,7 +113,6 @@ steps:
         body: 04_create-blog-post.md
         data:
           branch: '%payload.pull_request.head.ref%'
-  #5
   - title: Create a blog post
     description: Create a new file that will become your first blog post.
     event: pull_request.synchronize
@@ -181,7 +173,6 @@ steps:
       - type: createReview
         body: 05_add-front-matter.md
         event: COMMENT
-  #6
   - title: Add blog post metadata
     description: Add YAML front matter to the blog post to display the title and date.
     event: pull_request.synchronize
@@ -233,7 +224,6 @@ steps:
       - type: createReview
         body: 06_merge-and-celebrate.md
         event: APPROVE
-  #7
   - title: Merge your first post
     description: Merge the pull request so your blog post will appear on your GitHub Pages site.
     event: pull_request.closed
