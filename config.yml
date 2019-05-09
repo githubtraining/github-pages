@@ -63,7 +63,7 @@ steps:
         left: '%payload.pull_request.base.ref%'
         operator: ===
         right: 'master'
-            - type: updateBranchProtection
+      - type: updateBranchProtection
       - type: createIssue
         action_id: issue
         title: Getting ready to blog
