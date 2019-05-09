@@ -1,4 +1,4 @@
-## Step 8: Merge your first post
+## Step 7: Merge your first post
 
 Nice work @{{ user.username }} :tada:! Users will be reading your blog in no time!
 
@@ -9,4 +9,4 @@ Nice work @{{ user.username }} :tada:! Users will be reading your blog in no tim
 1. Click **Delete branch**
 
 <hr>
-<h3 align="center">Watch below for my response</h3>
+<h3 align="center">Watch below for my response.</h3>

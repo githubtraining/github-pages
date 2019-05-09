@@ -11,19 +11,20 @@ before:
   - type: updateBranchProtection
   - type: createIssue
     title: Welcome
-    body: 01_class-introduction-issue.md
+    body: 00_class-introduction-issue.md
 steps:
-  - title: Enable GitHub Pages
-    description: Turn on GitHub Pages in your repository.
+  #1
+  - title: Generate a GitHub Pages site
+    description: Generate a GitHub Pages site with the automatic page generator. 
     event: page_build
     link: '{{ repoUrl }}/issues/1'
     actions:
       - type: respond
         issue: 1
-        with: 02_update-index.md
+        with: 01_update-index.md
         data:
           url: 'https://%user.username%.github.io/%payload.repository.name%'
-
+  #2
   - title: Customize your homepage
     description: Open a pull request with changes to the homepage.
     event: pull_request.opened
@@ -34,7 +35,7 @@ steps:
         required: false
         else:
           type: respond
-          with: 06a_pull-request-blank.md
+          with: 02_pull-request-blank.md
       - type: getTree
         action_id: tree
         sha: '%payload.pull_request.head.sha%'
@@ -47,11 +48,13 @@ steps:
             operator: includes
             right: 'path:index.md'
       - type: createReview
-        body: 02r_merge-pr.md
+        body: 02_merge-pr.md
         event: APPROVE
         data:
           branch: '%payload.pull_request.head.ref%'
-
+      - type: closeIssue
+        issue: Welcome
+  #3
   - title: Merge your pull request
     description: Merge the pull request that customizes your homepage.
     event: pull_request.closed
@@ -63,57 +66,17 @@ steps:
         left: '%payload.pull_request.base.ref%'
         operator: ===
         right: 'master'
-      - type: getTree
-        action_id: tree
-        sha: '%payload.pull_request.head.sha%'
-      - type: gate
-        gates:
-          - left: '%actions.tree.data.tree%'
-            operator: includes
-            right: 'path:index.html'
-          - left: '%actions.tree.data.tree%'
-            operator: includes
-            right: 'path:index.md'
-        else:
-          type: respond
-          with: 02_wrong-file-updated.md
-      - type: createIssue
-        action_id: issue
-        title: Adding a Theme
-        body: 03_add-a-theme.md
-      - type: closeIssue
-        issue: Welcome
-      - type: removeBranchProtection
-      - type: respond
-        with: 04_moving-on-pr.md
-        data:
-          url: '%actions.issue.data.html_url%'
-
-  - title: Add a theme
-    description: Using the theme chooser, select a theme for your site.
-    event: push
-    link: '{{ repoUrl }}/issues'
-    actions:
-      - type: getFileContents
-        action_id: fileContents
-        filename: _config.yml
-      - type: gate
-        left: '/^theme:/m'
-        operator: test
-        right: '%actions.fileContents%'
-      - type: updateBranchProtection
+            - type: updateBranchProtection
       - type: createIssue
         action_id: issue
         title: Getting ready to blog
-        body: 05_change-theme.md
+        body: 03_change-theme.md
       - type: respond
-        with: 04_moving-on.md
-        issue: Adding a Theme
+        with: 03_merged-pr.md
         data:
           url: '%actions.issue.data.html_url%'
-      - type: closeIssue
-        issue: Adding a Theme
-
+      - type: removeBranchProtection
+  #4
   - title: Customize site details
     description: Edit the configuration file to display your information.
     event: pull_request
@@ -140,7 +103,7 @@ steps:
         left: '%payload.pull_request.body%'
         else:
           type: respond
-          with: 06a_pull-request-blank.md
+          with: 02_pull-request-blank.md
       - type: getFileContents
         filename: _config.yml
         action_id: file
@@ -151,13 +114,13 @@ steps:
         else:
           type: createReview
           event: REQUEST_CHANGES
-          body: 05r_wrong-theme.md
+          body: 04_wrong-theme.md
       - type: createReview
         event: COMMENT
-        body: 07_create-blog-post.md
+        body: 04_create-blog-post.md
         data:
           branch: '%payload.pull_request.head.ref%'
-
+  #5
   - title: Create a blog post
     description: Create a new file that will become your first blog post.
     event: pull_request.synchronize
@@ -207,7 +170,7 @@ steps:
           - left: '%actions.filename%'
         else:
           - type: createReview
-            body: 07b_incorrect-post.md
+            body: 05_incorrect-post.md
             event: REQUEST_CHANGES
             data:
               directory: '%actions.directory%'
@@ -216,9 +179,9 @@ steps:
               extension: '%actions.extension%'
               filename: '%actions.filename%'
       - type: createReview
-        body: 08_add-front-matter.md
+        body: 05_add-front-matter.md
         event: COMMENT
-
+  #6
   - title: Add blog post metadata
     description: Add YAML front matter to the blog post to display the title and date.
     event: pull_request.synchronize
@@ -261,16 +224,16 @@ steps:
           - left: '%actions.date%'
         else:
           - type: createReview
-            body: 08r_incorrect-front-matter.md
+            body: 06_incorrect-front-matter.md
             event: REQUEST_CHANGES
             data:
               date: '%actions.date%'
               title: '%actions.title%'
               dashes: '%actions.dashes%'
       - type: createReview
-        body: 09_merge-and-celebrate.md
+        body: 06_merge-and-celebrate.md
         event: APPROVE
-
+  #7
   - title: Merge your first post
     description: Merge the pull request so your blog post will appear on your GitHub Pages site.
     event: pull_request.closed
@@ -279,6 +242,6 @@ steps:
       - type: gate
         left: '%payload.pull_request.merged%'
       - type: respond
-        with: 10_next-steps.md
+        with: 07_next-steps.md
         data:
           url: 'https://%user.username%.github.io/%payload.repository.name%'

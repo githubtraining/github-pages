@@ -1,4 +1,4 @@
-## Step 6: Create a blog post
+## Step 5: Create a blog post
 
 :warning: Do not merge yet! :warning:
 
@@ -16,4 +16,4 @@ This pull request looks great so far. :sparkles: You've just edited the `_config
 1. Commit your changes to your branch
 
 <hr>
-<h3 align="center">Watch below for my response</h3>
+<h3 align="center">Watch below for my response.</h3>
