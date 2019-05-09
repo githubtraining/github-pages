@@ -91,7 +91,7 @@ steps:
 
   - title: Add a theme
     description: Using the theme chooser, select a theme for your site.
-    event: page_build
+    event: push
     link: '{{ repoUrl }}/issues'
     actions:
       - type: getFileContents
