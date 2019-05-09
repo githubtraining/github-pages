@@ -15,7 +15,7 @@ before:
 steps:
   - title: Enable GitHub Pages
     description: Turn on GitHub Pages in your repository.
-    event: deployment_status
+    event: page_build
     link: '{{ repoUrl }}/issues/1'
     actions:
       - type: gate
