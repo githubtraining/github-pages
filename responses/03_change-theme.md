@@ -1,6 +1,6 @@
 ## Step 4: Customize Site Details
 
-Great work! You can see your selected theme in action [here](https://{{ user.username }}.github.io/{{ repo }}). If you don't see your changes right away, refresh the page.
+Great work! You can see your selected theme in action [here]({{ deploymentUrl }}). If you don't see your changes right away, refresh the page.
 
 ### Getting your page blog ready
 
@@ -14,7 +14,7 @@ Let's change the `_config.yml` so it's a perfect fit for your new blog. First, w
 
 1. Navigate to the **Code** tab of this repository, and browse to the `_config.yml` file, or click this link [here]({{ repoUrl }}/blob/master/_config.yml).
 2. In the upper right corner, click :pencil2: to open the file editor.
-3. Change `theme:` to **jekyll-theme-minimal** so it shows in the `_config.yml` file as below:
+3. Add a `theme:` set to **jekyll-theme-minimal** so it shows in the `_config.yml` file as below:
     ```
     theme: jekyll-theme-minimal
     ```

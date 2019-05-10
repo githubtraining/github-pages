@@ -18,11 +18,16 @@ steps:
     event: page_build
     link: '{{ repoUrl }}/issues/1'
     actions:
+      - type: octokit
+        method: repos.getPages
+        owner: '%payload.repository.owner.login%'
+        repo: '%payload.repository.name%'
+        action_id: pagesUrl
       - type: respond
         issue: 1
         with: 01_update-index.md
         data:
-          url: 'https://%user.username%.github.io/%payload.repository.name%'
+          deploymentUrl: '%actions.pagesUrl.data.html_url%'
       - type: updateBranchProtection
 
   - title: Customize your homepage
@@ -59,10 +64,17 @@ steps:
         operator: ===
         right: 'master'
       - type: updateBranchProtection
+      - type: octokit
+        method: repos.getPages
+        owner: '%payload.repository.owner.login%'
+        repo: '%payload.repository.name%'
+        action_id: pagesUrl
       - type: createIssue
         action_id: issue
         title: Getting ready to blog
         body: 03_change-theme.md
+        data:
+          deploymentUrl: '%actions.pagesUrl.data.html_url%'      
       - type: respond
         with: 03_merged-pr.md
         data:
@@ -232,9 +244,14 @@ steps:
     event: pull_request.closed
     link: '{{ repoUrl }}/pulls'
     actions:
+      - type: octokit
+        method: repos.getPages
+        owner: '%payload.repository.owner.login%'
+        repo: '%payload.repository.name%'
+        action_id: pagesUrl
       - type: gate
         left: '%payload.pull_request.merged%'
       - type: respond
         with: 07_next-steps.md
         data:
-          url: 'https://%user.username%.github.io/%payload.repository.name%'
+          deploymentUrl: '%actions.pagesUrl.data.html_url%'

@@ -2,7 +2,7 @@ It looks like you changed your theme, but for this activity we want to use `jeky
 
 ### :keyboard: Activity: Change the theme to jekyll-theme-cayman
 
-Let's change the theme to `minima`:
+Let's change the theme to `jekyll-theme-minimal`:
 
 1. At the top of this Pull Request, click the **Files changed** tab.
 2. Click the icon to enter edit mode and change the  `theme:` to **jekyll-theme-minimal**.
