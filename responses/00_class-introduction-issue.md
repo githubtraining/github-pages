@@ -2,7 +2,7 @@
 
 Welcome to GitHub Pages and Jekyll :tada:!
 
-If you're new to GitHub Pages, or you want to learn how to build and host a [GitHub Pages](https://pages.github.com) site, you're in the right place. With GitHub Pages, you can host content like [documentation](https://flight-manual.atom.io/), [resumes](https://github.com/jglovier/resume-template), or any other static content you’d like.
+If you're new to GitHub Pages, or you want to learn how to build and host a [GitHub Pages](https://pages.github.com) site, you're in the right place. With GitHub Pages, you can host content like [documentation](https://flight-manual.atom.io/), [resumes](https://github.com/jglovier/resume-template), or any other static content that you’d like.
 
 In this course, you'll create a blog hosted on GitHub Pages and learn how to:
 
