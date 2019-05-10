@@ -38,8 +38,6 @@ The first step to publishing your blog to the web is to enable GitHub Pages on t
 
 After GitHub Pages is enabled and the site is started, we'll be ready to create some more content. 
 
-For a printable version of the steps in this course, check out the [Quick Reference Guide]({{ host }}/public/{{ course.slug }}.pdf).
-
 > Turning on GitHub Pages creates a deployment of your repository. I may take up to a minute to respond as I await the deployment.
 
 <hr>
