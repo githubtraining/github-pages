@@ -20,19 +20,19 @@ The first step to publishing your blog to the web is to enable GitHub Pages on t
 
 {% if GHE_HOST %}
 
-1. Under your repository name, click [**Settings**]({{ repoUrl }}/settings)
-1. In the "GitHub Pages" section, click **Launch automatic page generator**
-1. Edit the **Project name** and **Body** to be what you'd like your main page to display
-1. Click **Continue to layouts**
-1. Select a layout 
-1. Click **Publish page**
+1. Under your repository name, click [**Settings**]({{ repoUrl }}/settings).
+1. In the "GitHub Pages" section, click **Launch automatic page generator**.
+1. Edit the **Project name** and **Body** to be what you'd like your main page to display.
+1. Click **Continue to layouts**.
+1. Select a layout.
+1. Click **Publish page**.
    
 {% else %}
 
-1. Under your repository name, click [**Settings**]({{ repoUrl }}/settings)
-1. In the "GitHub Pages" section, click **Choose a theme**
-2. Select a theme
-3. Click **Select theme**
+1. Under your repository name, click [**Settings**]({{ repoUrl }}/settings).
+1. In the "GitHub Pages" section, click **Choose a theme**.
+2. Select a theme.
+3. Click **Select theme**.
    
 {% endif %}
 

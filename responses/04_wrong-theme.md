@@ -4,10 +4,10 @@ It looks like you changed your theme, but for this activity we want to use `jeky
 
 Let's change the theme to `minima`:
 
-1. At the top of this Pull Request, click the **Files changed** tab
-1. Click the :pencil2: icon to enter edit mode and change the  `theme:` to **jekyll-theme-minimal**
-1. Scroll to the bottom of the window to create a commit
-1. Enter a commit message then click **Commit changes**
+1. At the top of this Pull Request, click the **Files changed** tab.
+2. Click the icon to enter edit mode and change the  `theme:` to **jekyll-theme-minimal**.
+3. Scroll to the bottom of the window to create a commit.
+4. Enter a commit message then click **Commit changes**.
 
 > Don't worry, if you don't like this theme you can always change it later.
 

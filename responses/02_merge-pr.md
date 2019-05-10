@@ -4,9 +4,9 @@ You can merge<sup>[:book:](https://help.github.com/articles/github-glossary/#mer
 
 ### :keyboard: Activity: Merge your pull request
 
-1. Click **Merge pull request** below
-1. Click **Confirm merge**
-1. Click **Delete branch**
+1. Click **Merge pull request** below.
+1. Click **Confirm merge**.
+1. Click **Delete branch**.
 
 <hr>
 <h3 align="center">Watch below for my response.</h3>
