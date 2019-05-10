@@ -67,7 +67,6 @@ steps:
         with: 03_merged-pr.md
         data:
           url: '%actions.issue.data.html_url%'
-      - type: removeBranchProtection
 
   - title: Customize site details
     description: Edit the configuration file to display your information.
@@ -223,6 +222,7 @@ steps:
               date: '%actions.date%'
               title: '%actions.title%'
               dashes: '%actions.dashes%'
+      - type: removeBranchProtection
       - type: createReview
         body: 06_merge-and-celebrate.md
         event: APPROVE
