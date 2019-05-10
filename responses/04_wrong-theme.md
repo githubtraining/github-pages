@@ -1,6 +1,6 @@
 It looks like you changed your theme, but for this activity we want to use `jekyll-theme-minimal`.
 
-### :keyboard: Activity: Change the theme to jekyll-theme-cayman
+### :keyboard: Activity: Change the theme to jekyll-theme-minimal
 
 Let's change the theme to `jekyll-theme-minimal`:
 

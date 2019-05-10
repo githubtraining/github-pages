@@ -1,10 +1,10 @@
 ## Step 4: Customize Site Details
 
-Great work! You can see your selected theme in action [here]({{ deploymentUrl }}). If you don't see your changes right away, refresh the page.
+Great work! You can see your published page [here]({{ deploymentUrl }}). If you don't see your changes right away, refresh the page.
 
 ### Getting your page blog ready
 
-GitHub added the theme you selected to your `_config.yml` file. Jekyll uses the `_config.yml` file to store  settings for your site, like your theme, as well as reusable content like your site title and GitHub handle.
+Jekyll uses a file titled `_config.yml` to store settings for your site, a your theme and reusable content like your site title and GitHub handle.
 
 You can check out the `_config.yml` file on the **Code** tab of your repository.
 
