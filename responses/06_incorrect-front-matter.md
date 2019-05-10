@@ -17,13 +17,13 @@ date: YYYY-MM-DD
 
 ### :keyboard: Activity: Edit your blog post
 
-1. Click the "Files Changed" tab in this pull request
-1. Scroll past the config file, and find the file that you created
-1. Click on the pencil icon on the right side of the screen
-1. Make adjustments based on the above errors
-1. Scroll to the bottom, and commit your changes
+1. Click the "Files Changed" tab in this pull request.
+1. Scroll past the config file, and find the file that you created.
+1. Click on the pencil icon on the right side of the screen.
+1. Make adjustments based on the above errors.
+1. Scroll to the bottom, and commit your changes.
 
 If you would like assistance troubleshooting the issue you are encountering, create a post on the [GitHub Community]({{ communityBoard }}) board. You might also want to search for your issue to see if other people have resolved it in the past.
 
 <hr>
-<h3 align="center">Watch below for my response</h3>
+<h3 align="center">Watch below for my response.</h3>

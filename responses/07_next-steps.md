@@ -4,14 +4,13 @@
 
 Congratulations @{{ user.username }}, you've completed this course!
 
-Your blog is now live and has been deployed [here](https://{{ user.username }}.github.io/{{ repo }})!
+Your blog is now live and has been deployed [here]({{ deploymentUrl }})!
 
 Before we finish, let's recap everything you completed in this repository
 
 - You used the GitHub Flow like a natural
 - You enabled GitHub Pages
-- You picked a default theme
-- You changed the theme using the config file
+- You selected a theme using the config file
 - You learned about proper directory format and file naming conventions in Jekyll
 - You added and modified Jekyll front matter
 
