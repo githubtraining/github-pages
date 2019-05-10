@@ -18,12 +18,23 @@ For this course, you'll need to know how to create a branch on GitHub, commit ch
 
 The first step to publishing your blog to the web is to enable GitHub Pages on this repository <sup>[:book:](https://help.github.com/articles/github-glossary/#repository)</sup>. When you enable GitHub Pages on a repository, GitHub takes the content that's on the master branch and publishes a website based on its contents.
 
+{% if GHE_HOST %}
+
 1. Under your repository name, click [**Settings**]{{ repoUrl }}/settings)
 1. In the "GitHub Pages" section, click **Launch automatic page generator**
 1. Edit the **Project name** and **Body** to be what you'd like your main page to display
 1. Click **Continue to layouts**
 1. Select a layout 
 1. Click **Publish page**
+   
+{% else %}
+
+1. Under your repository name, click [**Settings**]{{ repoUrl }}/settings)
+1. In the "GitHub Pages" section, click **Choose a theme**
+2. Select a theme
+3. Click **Select theme**
+   
+{% endif %}
 
 After GitHub Pages is enabled and the site is started, we'll be ready to create some more content. 
 

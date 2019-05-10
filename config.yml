@@ -8,7 +8,6 @@ template:
   name: github-pages-with-jekyll
   repo: github-pages-with-jekyll-template
 before:
-  - type: updateBranchProtection
   - type: createIssue
     title: Welcome
     body: 00_class-introduction-issue.md
@@ -24,6 +23,8 @@ steps:
         with: 01_update-index.md
         data:
           url: 'https://%user.username%.github.io/%payload.repository.name%'
+      - type: updateBranchProtection
+
 
   - title: Customize your homepage
     description: Open a pull request with changes to the homepage.

@@ -8,11 +8,24 @@ Your repository has an `index.html` file so we can update it to include your per
 
 ### :keyboard: Activity: Create your homepage
 
+{% if GHE_HOST %}
+
 1. Navigate to the **Code** tab of this repository, and browse to the `index.html` file
-1. In the upper right corner, click the :pencil2: pencil icon to open the file editor
+1. In the upper right corner, click the the icon to the right of the file to edit the `index.md` file
 2. Type the content you want on your homepage
 3. Scroll to the bottom, type a commit message, and click **Create a new branch for this commit and start a pull request**
 4. Open a pull request
+   
+{% else %}
+
+1. Navigate to the **Code** tab of this repository, and browse to the `index.md` file
+2. In the upper right corner, click the the icon to the right of the file to edit the `index.md` file
+3. Type the content you want on your homepage
+4. Scroll to the bottom, type a commit message, and click **Create a new branch for this commit and start a pull request**
+5. Open a pull request
+   
+{% endif %}
+
 
 > Once you have created your pull request, I will move over there to discuss next steps.
 
