@@ -25,7 +25,6 @@ steps:
           url: 'https://%user.username%.github.io/%payload.repository.name%'
       - type: updateBranchProtection
 
-
   - title: Customize your homepage
     description: Open a pull request with changes to the homepage.
     event: pull_request.opened
@@ -40,11 +39,6 @@ steps:
       - type: getTree
         action_id: tree
         sha: '%payload.pull_request.head.sha%'
-      - type: gate
-        gates:
-          - left: '%actions.tree.data.tree%'
-            operator: includes
-            right: 'path:index.html'
       - type: createReview
         body: 02_merge-pr.md
         event: APPROVE
