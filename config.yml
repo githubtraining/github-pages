@@ -111,7 +111,7 @@ steps:
         filename: _config.yml
         action_id: file
       - type: gate
-        left: '/^theme:\s?jekyll-theme-minimal$/m'
+        left: '/^theme:\s?minima$/m'
         operator: test
         right: '%actions.file%'
         else:

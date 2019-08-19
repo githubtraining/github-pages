@@ -1,11 +1,11 @@
-It looks like you changed your theme, but for this activity we want to use `jekyll-theme-minimal`.
+It looks like you changed your theme, but for this activity we want to use `minima`.
 
-### :keyboard: Activity: Change the theme to jekyll-theme-minimal
+### :keyboard: Activity: Change the theme to minima
 
-Let's change the theme to `jekyll-theme-minimal`:
+Let's change the theme to `minima`:
 
 1. At the top of this Pull Request, click the **Files changed** tab.
-2. Click the icon to enter edit mode and change the  `theme:` to **jekyll-theme-minimal**.
+2. Click the icon to enter edit mode and change the  `theme:` to **minima**.
 3. Scroll to the bottom of the window to create a commit.
 4. Enter a commit message then click **Commit changes**.
 
