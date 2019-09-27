@@ -13,10 +13,10 @@ preferences:
     label: Language
     description: Choose your preferred language.
     options:
-  - label: English
-    value: en
-  - label: Español
-    value: es
+    - label: English
+      value: en
+    - label: Español
+      value: es
 before:
   - type: createIssue
     title: Welcome
