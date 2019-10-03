@@ -1,6 +1,6 @@
 ## Comprobando tu post
 
-@{{ user.username }} veo que has creado un archivo, pero hay algunas cosas que tienes que resolver!
+@{{ user.username }} veo que has creado un archivo, pero ¡hay algunas cosas que tienes que resolver!
 
 Echa un vistazo a tu archivo y asegúrate de que cumple los siguientes requerimientos:
 

@@ -1,6 +1,6 @@
 ## Paso 1: Activa GitHub Pages
 
-Bienvenida a GitHub Pages y Jekyll :tada:!
+¡Bienvenida a GitHub Pages y Jekyll! :tada:
 
 Si es la primera vez que usas GitHub Pages o quieres aprender cómo crear y alojar un sitio web con [GitHub Pages](https://pages.github.com), estás en el lugar adecuado. Con GitHub Pages, puedes alojar contenidos como [documentación](https://flight-manual.atom.io/), [currículums](https://github.com/jglovier/resume-template) o cualquier otro contenido estático que quieras. 
 
@@ -10,7 +10,7 @@ En este curso crearás un blog alojado en GitHub Pages y aprenderas a:
 - Usar [Jekyll](https://jekyllrb.com/), un generador de sitios estáticos
 - Personalizar el aspecto y contenido de sitios creados con Jekyll
 
-### GitHub es nuevo para ti?
+### ¿GitHub es nuevo para ti?
 
 Para este curso necesitas saber cómo crear una rama (_branch_) en GitHub, confirmar cambios (_commit_) usando Git, y abrir peticiones de extracción (_pull requests_) en GitHub. Si necesitas un recordatorio del flujo de trabajo en GitHub, revisa el [curso de Introducción a GitHub]({{ host }}/courses/introduction-to-github).
 

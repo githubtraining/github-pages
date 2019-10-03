@@ -1,6 +1,6 @@
 ## Paso 7: Combina tu primer post
 
-Genial @{{ user.username }} :tada:! Otras personas podrán leer tu blog enseguida!
+¡Genial @{{ user.username }}! :tada: Otras personas podrán leer tu blog enseguida!
 
 ### :keyboard: Actividad: Combina tu pull request
 

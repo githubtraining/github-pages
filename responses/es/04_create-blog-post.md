@@ -2,7 +2,7 @@
 
 :warning: ¡No hagas merge todavía! :warning:
 
-Este pull request pinta muy bien. :sparkles: Acabas de editar el archivo `_config.yml`! Tenemos algo más de trabajo para crear tu blog. Puedes seguir haciendo commits en tu rama `{{ branch }}` y el pull request se actualizará automáticamente..
+Este pull request pinta muy bien. :sparkles: ¡Acabas de editar el archivo `_config.yml`! Tenemos algo más de trabajo para crear tu blog. Puedes seguir haciendo commits en tu rama `{{ branch }}` y el pull request se actualizará automáticamente.
 
 ### :keyboard: Actividad: Añade algo de contenido a tu blog
 

@@ -2,9 +2,9 @@
 
 ![celebrate](https://octodex.github.com/images/constructocat2.jpg)
 
-Enhorabuena @{{ user.username }}, has completado el curso!
+Enhorabuena @{{ user.username }}, ¡has completado el curso!
 
-Tu blog está ahora publicado y se ha implementado [aquí]({{ deploymentUrl }})!
+¡Tu blog está ahora publicado y se ha implementado [aquí]({{ deploymentUrl }})!
 
 Antes de que terminemos, hagamos un repaso de todo lo que has hecho en este repositorio
 
@@ -15,4 +15,4 @@ Antes de que terminemos, hagamos un repaso de todo lo que has hecho en este repo
 - Has añadido y modificado texto preliminar de Jekyll
 
 ## ¿Y ahora?
-Hay muchas cosas más que puedes hacer con GitHub Pages, y has empezado con buen pie. Ahora... [qué será lo siguiente que aprendas]({{ host }}/courses)?
+Hay muchas cosas más que puedes hacer con GitHub Pages, y has empezado con buen pie. Ahora... ¿[qué será lo siguiente que aprendas]({{ host }}/courses)?
