@@ -1,3 +1,3 @@
-Good work @{{ user.username }}! This pull request is all finished up. Find your next task [here]({{ url }}).
+¡Buen trabajo, @{{ user.username }}! Este request ya está terminado. Encontrarás tu siguiente tarea [aquí]({{ url }}).
 
-I'm going to go ahead and close our first issue <sup>[:book:](https://help.github.com/articles/github-glossary/#issue)</sup> now that you have updated your `index.md` file.
+Voy a adelantarme y a cerrar nuestro primer issue <sup>[:book:](https://help.github.com/articles/github-glossary/#issue)</sup> ahora que ya has actualizado tu archivo `index.md`.
