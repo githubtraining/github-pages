@@ -1,20 +1,37 @@
 title: GitHub Pages
 tagline: Your sidekick in using GitHub Pages and blogs
-description: Learn how to create a site or blog from your GitHub repositories with GitHub Pages.
+description: >-
+  Learn how to create a site or blog from your GitHub repositories with GitHub
+  Pages.
 tags:
   - GitHub
   - GitHub Pages
 template:
   name: github-pages-with-jekyll
   repo: github-pages-with-jekyll-template
+preferences:
+  - type: dropdown
+    name: language
+    label: Language
+    description: Choose your preferred language.
+    options:
+      - label: English
+        value: en
+      - label: Español
+        value: es
 before:
   - type: createIssue
     title: Welcome
     body: 00_class-introduction-issue.md
-    
 steps:
   - title: Generate a GitHub Pages site
-    description: Generate a GitHub Pages site with the automatic page generator. 
+    description: Generate a GitHub Pages site with the automatic page generator.
+    translations:
+      es:
+        title: Activa GitHub Pages
+        description: >-
+          Gnera un sitio web con el generador automático de páginas GitHub
+          Pages.
     event: page_build
     link: '{{ repoUrl }}/issues/1'
     actions:
@@ -29,9 +46,12 @@ steps:
         data:
           deploymentUrl: '%actions.pagesUrl.data.html_url%'
       - type: updateBranchProtection
-
   - title: Customize your homepage
     description: Open a pull request with changes to the homepage.
+    translations:
+      es:
+        title: Personaliza tu página inicial
+        description: Abre un pull request con cambios en la página inicial.
     event: pull_request.opened
     link: '{{ repoUrl }}/issues'
     actions:
@@ -51,9 +71,12 @@ steps:
           branch: '%payload.pull_request.head.ref%'
       - type: closeIssue
         issue: Welcome
-
   - title: Merge your pull request
     description: Merge the pull request that customizes your homepage.
+    translations:
+      es:
+        title: Combina tu pull request
+        description: Combina el pull request que personaliza tu página inicial.
     event: pull_request.closed
     link: '{{ repoUrl }}/pulls'
     actions:
@@ -62,7 +85,7 @@ steps:
       - type: gate
         left: '%payload.pull_request.base.ref%'
         operator: ===
-        right: 'master'
+        right: master
       - type: updateBranchProtection
       - type: octokit
         method: repos.getPages
@@ -74,14 +97,17 @@ steps:
         title: Getting ready to blog
         body: 03_change-theme.md
         data:
-          deploymentUrl: '%actions.pagesUrl.data.html_url%'      
+          deploymentUrl: '%actions.pagesUrl.data.html_url%'
       - type: respond
         with: 03_merged-pr.md
         data:
           url: '%actions.issue.data.html_url%'
-
   - title: Customize site details
     description: Edit the configuration file to display your information.
+    translations:
+      es:
+        title: Personaliza los detalles del sitio
+        description: Edita el archivo de configuración para mostrar tu información.
     event: pull_request
     link: '{{ repoUrl }}/issues'
     actions:
@@ -89,15 +115,15 @@ steps:
         gates:
           - left: '%payload.action%'
             operator: ===
-            right: 'opened'
+            right: opened
           - left: '%payload.action%'
             operator: ===
-            right: 'synchronize'
+            right: synchronize
       - type: gate
         required: false
         left: '%payload.action%'
         operator: '!=='
-        right: 'opened'
+        right: opened
         else:
           type: closeIssue
           issue: Getting ready to blog
@@ -124,9 +150,12 @@ steps:
         data:
           branch: '%payload.pull_request.head.ref%'
           date: '%payload.pull_request.created_at%'
-
   - title: Create a blog post
     description: Create a new file that will become your first blog post.
+    translations:
+      es:
+        title: Crea un post
+        description: Crea un nuevo archivo que se convertirá en el primer post de tu blog.
     event: pull_request.synchronize
     link: '{{ repoUrl }}/pulls'
     actions:
@@ -185,9 +214,12 @@ steps:
       - type: createReview
         body: 05_add-front-matter.md
         event: COMMENT
-
   - title: Add blog post metadata
     description: Add YAML front matter to the blog post to display the title and date.
+    translations:
+      es:
+        title: Añade metadatos al post
+        description: Añade texto preliminar YAML al post para mostrar el título y la fecha.
     event: pull_request.synchronize
     link: '{{ repoUrl }}/pulls'
     actions:
@@ -211,7 +243,7 @@ steps:
       - type: gate
         required: false
         action_id: title
-        left: /^title:\s?["'].+["']$/m
+        left: '/^title:\s?["''].+["'']$/m'
         operator: test
         right: '%actions.contents%'
       - type: gate
@@ -238,9 +270,16 @@ steps:
       - type: createReview
         body: 06_merge-and-celebrate.md
         event: APPROVE
-
   - title: Merge your first post
-    description: Merge the pull request so your blog post will appear on your GitHub Pages site.
+    description: >-
+      Merge the pull request so your blog post will appear on your GitHub Pages
+      site.
+    translations:
+      es:
+        title: Combina tu primer post
+        description: >-
+          Combina el pull request para que tu post aparezca en tu sitio de
+          GitHub Pages.
     event: pull_request.closed
     link: '{{ repoUrl }}/pulls'
     actions:
