@@ -26,6 +26,6 @@ Una vez que GitHub Pages se ha activado y se ha iniciado el sitio web, estaremos
 > Activar GitHub Pages crea una implementación de tu repositorio. Puede llevarme hasta un minuto contestar mientras espero a la implementación.
 
 <hr>
-<h3 align="center">Vuelve a esta propuesta (_issue_) para mi siguiente comentario.</h3>
+<h3 align="center">Vuelve a esta propuesta _(issue)_ para mi siguiente comentario.</h3>
 
 > _A veces respondo demasiado rápido para que la página se actualice por sí misma. Si realizas alguna acción prevista y no ves una respuesta por mi parte, espera unos segundos y refresca la página para ver tus siguientes pasos._
