@@ -12,7 +12,7 @@ In this course, you'll create a blog hosted on GitHub Pages and learn how to:
 
 ### New to GitHub?
 
-For this course, you'll need to know how to create a branch on GitHub, commit changes using Git, and open a pull request on GitHub. If you need a refresher on the GitHub flow, check out the [the Introduction to GitHub course]({{ host }}/courses/introduction-to-github).
+For this course, you'll need to know how to create a branch on GitHub, commit changes using Git, and open a pull request on GitHub. If you need a refresher on the GitHub flow, check out the [Introduction to GitHub course]({{ host }}/courses/introduction-to-github).
 
 ### :keyboard: Activity: Generate a GitHub Pages site
 
