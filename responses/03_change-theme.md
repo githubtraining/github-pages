@@ -4,7 +4,7 @@ Great work! You can see your published page [here]({{ deploymentUrl }}). If you 
 
 ### Getting your page blog ready
 
-Jekyll uses a file titled `_config.yml` to store settings for your site, a your theme and reusable content like your site title and GitHub handle.
+Jekyll uses a file titled `_config.yml` to store settings for your site, your theme, and reusable content like your site title and GitHub handle.
 
 You can check out the `_config.yml` file on the **Code** tab of your repository.
 
