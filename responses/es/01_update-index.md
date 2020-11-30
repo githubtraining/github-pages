@@ -8,7 +8,7 @@ Tu repositorio tiene un archivo `index.md`, así que podemos actualizarlo para q
 
 ### :keyboard: Actividad: Crea tu página inicial
 
-1. Navega a la pestaña **Code** de este repositorio y accede al archivo `index.md`, o haz clic en [este enlace]({{ repoUrl }}/blob/master/index.md)
+1. Navega a la pestaña **Code** de este repositorio y accede al archivo `index.md`, o haz clic en [este enlace]({{ repoUrl }}/blob/main/index.md)
 2. En la esquina superior derecha, haz clic en el icono a la derecha del archivo para editar el archivo `index.md` 
 3. Escribe el contenido que quieres que aparezca en tu página principal
 4. Haz scroll hasta la parte inferior, escribe un mensaje de commit y haz clic en **Create a new branch for this commit and start a pull request**

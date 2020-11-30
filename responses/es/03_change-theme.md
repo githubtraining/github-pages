@@ -14,7 +14,7 @@ Vamos a modificar `_config.yml` para que refleje perfectamente con tu nuevo blog
 
 
 
-1. Navega a la pestaña **Code** de este repositorio y hasta el archivo `_config.yml`, o haz clic en [este enlace]({{ repoUrl }}/blob/master/_config.yml).
+1. Navega a la pestaña **Code** de este repositorio y hasta el archivo `_config.yml`, o haz clic en [este enlace]({{ repoUrl }}/blob/main/_config.yml).
 2. En la esquina superior derecha, haz clic en :pencil2: para abrir el editor.
 3. Añade un `theme:` que especifique **minima**, de forma que se vea así en tu archivo `_config.yml`:
     ```
