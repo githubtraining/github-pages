@@ -16,10 +16,10 @@ Para este curso necesitas saber cómo crear una rama (_branch_) en GitHub, confi
 
 ### :keyboard: Actividad: Genera un sitio web con GitHub Pages
 
-El primer paso para publicar tu blog en la web es activar GitHub Pages en este repositorio <sup>[:book:](https://help.github.com/articles/github-glossary/#repository)</sup>. Cuando habilitas GitHub Pages para un repositorio, GitHub toma el contenido que tenga en el branc `master` y publica un sitio web basado en esos contenidos.
+El primer paso para publicar tu blog en la web es activar GitHub Pages en este repositorio <sup>[:book:](https://help.github.com/articles/github-glossary/#repository)</sup>. Cuando habilitas GitHub Pages para un repositorio, GitHub toma el contenido que tenga en el branc `main` y publica un sitio web basado en esos contenidos.
 
 1. Debajo del nombre de tu repositorio, haz clic en [**Settings**]({{ repoUrl }}/settings) (Ajustes).
-1. En la sección "GitHub Pages", en el desplegable Source, selecciona **master branch**.
+1. En la sección "GitHub Pages", en el desplegable Source, selecciona **main branch**.
 
 Una vez que GitHub Pages se ha activado y se ha iniciado el sitio web, estaremos listos para crear algún contenido más. 
 

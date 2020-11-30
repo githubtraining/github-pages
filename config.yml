@@ -85,7 +85,7 @@ steps:
       - type: gate
         left: '%payload.pull_request.base.ref%'
         operator: ===
-        right: master
+        right: main
       - type: updateBranchProtection
       - type: octokit
         method: repos.getPages

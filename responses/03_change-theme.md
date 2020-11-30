@@ -12,7 +12,7 @@ You can check out the `_config.yml` file on the **Code** tab of your repository.
 
 Let's change the `_config.yml` so it's a perfect fit for your new blog. First, we need to use a blog-ready theme. For this activity, we will use a theme named `minima`.
 
-1. Navigate to the **Code** tab of this repository, and browse to the `_config.yml` file, or click this link [here]({{ repoUrl }}/blob/master/_config.yml).
+1. Navigate to the **Code** tab of this repository, and browse to the `_config.yml` file, or click this link [here]({{ repoUrl }}/blob/main/_config.yml).
 2. In the upper right corner, click :pencil2: to open the file editor.
 3. Add a `theme:` set to **minima** so it shows in the `_config.yml` file as below:
     ```
