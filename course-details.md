@@ -22,7 +22,7 @@ You'll know the answers to questions like:
 
 In this course, you'll build a simple personal blog site with GitHub Pages. You'll be able to add posts and share your blog with anyone.
 
-![Screenshot_2020-02-25 Welcome to my blog](https://user-images.githubusercontent.com/1221423/75267083-224fd180-57a8-11ea-8acf-64c1ee6d950f.png)
+![Screenshot_2021-04-07 Welcome to my blog](https://user-images.githubusercontent.com/29868089/113876198-76721580-97f2-11eb-89eb-e6c7375ad7cc.png)
 
 ## Prerequisites
 
